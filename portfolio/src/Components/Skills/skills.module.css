@@ -12,9 +12,18 @@
     margin: 10px auto;
     padding: 20px 20px;
     background-color: #1e252f;
-    border: 0.5rem solid black;
+    /* border: 0.5rem solid black; */
     border-radius: 2rem;
+    animation: borderGrove 7s infinite;
 }
+
+@keyframes borderGrove {
+    0%   {background-color: #1e252f; box-shadow: 0px 0px 2px 2px #888888;}
+    50%  {background-color: #1e252f; box-shadow: 0px 0px 2px 2px aqua;}
+    100%   {background-color: #1e252f; box-shadow: 0px 0px 2px 2px #888888;}
+
+}
+
 
 .containerSkills{
     width: 100%;
@@ -59,9 +68,9 @@
 
 
 @keyframes gradientDarkGray {
-    0%   {background-color: #141d24}
-    50%  {background-color: #3a3f44;}
-    100%   {background-color: #141d24}
+    0%   {background-color: #1e252f}
+    50%  {background-color: #1e252f;}
+    100%   {background-color: #1e252f}
 
 }
 

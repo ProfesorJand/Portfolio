@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
-import Style from "./proyects.module.css";
-import axios from "axios";
-import { FaEye, FaStar, FaClone } from "react-icons/fa";
-import { BiGitRepoForked } from "react-icons/bi";
+import React, { useEffect, useState } from 'react';
+import Style from './proyects.module.css';
+import axios from 'axios';
+import { FaEye, FaStar, FaClone } from 'react-icons/fa';
+import { BiGitRepoForked } from 'react-icons/bi';
+import imgNoAvailable from '../../Images/no-image-available.jpg';
 
-import { IconContext } from "react-icons";
+import { IconContext } from 'react-icons';
 //
 // import "react-responsive-carousel/lib/styles/carousel.min.css";
 // import {Carousel} from "react-responsive-carousel";
@@ -25,22 +26,40 @@ export default function Proyects() {
 
   function repos() {
     axios
-      .get("https://api.github.com/users/ProfesorJand/repos")
+      .get('https://api.github.com/users/ProfesorJand/repos')
       .then((r) => r.data)
       .then((r) => setRepo(r));
     return;
   }
 
   function organisations() {
+    // axios
+    //   .get("https://api.github.com/users/ProfesorJand/orgs")
+    //   .then((r)=> r.data.forEach((e,i)=>
+    //     axios
+    //       .get(e.repos_url)
+    //       .then((r) => r.data)
+    //       .then((r) => {
+    //         r.forEach((e, i) =>
+    //           axios.get(e.assignees_url.replace("{/user}", "")).then((member) => {
+    //             let array = [];
+    //             array[i] = { [e.name]: member.data };
+    //             setMembers((m) => ({...m,[e.name]: member.data}) );
+    //           })
+    //         );
+    //         setOrgs((old)=>[...old, r]);
+    //       })
+    //   ))
+
     axios
       .get(`https://api.github.com/orgs/PT07G05-Henry/repos`)
       .then((r) => r.data)
       .then((r) => {
         r.forEach((e, i) =>
-          axios.get(e.assignees_url.replace("{/user}", "")).then((member) => {
+          axios.get(e.assignees_url.replace('{/user}', '')).then((member) => {
             let array = [];
             array[i] = { [e.name]: member.data };
-            setMembers((m) => ({...m,[e.name]: member.data}) );
+            setMembers((m) => ({ ...m, [e.name]: member.data }));
           })
         );
         setOrgs(r);
@@ -56,6 +75,7 @@ export default function Proyects() {
         {/* <Carousel> */}
         {repo &&
           repo.map((r) => {
+            const imgUrl = `https://raw.githubusercontent.com/${r.full_name}/main/thumbnail.png`;
             return (
               <div
                 className={Style.container + ` mySlides` + ` w3-animate-fading`}
@@ -65,7 +85,11 @@ export default function Proyects() {
                 <img
                   className={`${Style.img_thumbnail}`}
                   src={`https://raw.githubusercontent.com/${r.full_name}/main/thumbnail.png`}
-                  alt="Repo thumbnail"
+                  onError={({ currentTarget }) => {
+                    currentTarget.onerror = null; // prevents looping
+                    currentTarget.src = imgNoAvailable;
+                  }}
+                  alt={'Repo thumbnail ' + r.full_name}
                 />
                 <p>{r.description}</p>
                 <div className={Style.Info_Actions_Github}>
@@ -96,7 +120,7 @@ export default function Proyects() {
                   value="Go Repository"
                   type="button"
                   onClick={() => {
-                    window.open(r.html_url, "_blank");
+                    window.open(r.html_url, '_blank');
                   }}
                 ></input>
               </div>
@@ -111,6 +135,7 @@ export default function Proyects() {
         {/* <Carousel> */}
         {orgs &&
           orgs.map((r) => {
+            const imgUrl = `https://raw.githubusercontent.com/${r.full_name}/main/thumbnail.png`;
             return (
               <div
                 className={Style.container + ` mySlides` + ` w3-animate-fading`}
@@ -123,7 +148,11 @@ export default function Proyects() {
                 <img
                   className={`${Style.img_thumbnail}`}
                   src={`https://raw.githubusercontent.com/${r.full_name}/main/thumbnail.png`}
-                  alt="Repo thumbnail"
+                  onError={({ currentTarget }) => {
+                    currentTarget.onerror = null; // prevents looping
+                    currentTarget.src = imgNoAvailable;
+                  }}
+                  alt={'Repo thumbnail ' + r.full_name}
                 />
                 <p>{r.description}</p>
                 <div className={Style.Info_Actions_Github}>
@@ -154,15 +183,23 @@ export default function Proyects() {
                   value="Go Repository"
                   type="button"
                   onClick={() => {
-                    window.open(r.html_url, "_blank");
+                    window.open(r.html_url, '_blank');
                   }}
                 ></input>
                 <div className={Style.Members}>
-                  {members && members[r.name] && members[r.name].map((m)=>{
-                    return (
-                      <a href={m.html_url} target="_blank"><img className={Style.img_member} src={m.avatar_url} alt={`member ${m.login}`} /></a>               
-                    )
-                  })}
+                  {members &&
+                    members[r.name] &&
+                    members[r.name].map((m) => {
+                      return (
+                        <a href={m.html_url} target="_blank">
+                          <img
+                            className={Style.img_member}
+                            src={m.avatar_url}
+                            alt={`member ${m.login}`}
+                          />
+                        </a>
+                      );
+                    })}
                 </div>
               </div>
             );
