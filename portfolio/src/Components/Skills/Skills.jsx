@@ -5,6 +5,10 @@ export default function Skills() {
   const skills = {
     Frontend: [
       {
+        skillName: "Astro",
+        urlImage: "https://img.icons8.com/nolan/64/astro-js.png",
+      },    
+      {
         skillName: "React",
         urlImage: "https://img.icons8.com/officel/80/null/react.png",
       },
