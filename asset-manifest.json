@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.7b0a469c.css",
+    "main.js": "/portfolio/static/js/main.092cf1dd.js",
+    "static/media/Foto_cuadrada_Jorge.jpg": "/portfolio/static/media/Foto_cuadrada_Jorge.a6e6eac2d2fb768ca969.jpg",
+    "static/media/no-image-available.jpg": "/portfolio/static/media/no-image-available.dfe67ca5db0a9adb9a05.jpg",
+    "index.html": "/portfolio/index.html",
+    "main.7b0a469c.css.map": "/portfolio/static/css/main.7b0a469c.css.map",
+    "main.092cf1dd.js.map": "/portfolio/static/js/main.092cf1dd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7b0a469c.css",
+    "static/js/main.092cf1dd.js"
+  ]
+}
