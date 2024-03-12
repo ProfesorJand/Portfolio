@@ -34,7 +34,7 @@ export default function Skills() {
       },
       {
         skillName: 'Next',
-        urlImage: 'https://img.icons8.com/color/48/nextjs.png',
+        urlImage: 'https://img.icons8.com/nolan/64/nextjs.png',
       },
     ],
 
