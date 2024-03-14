@@ -18,8 +18,8 @@ export default function Navbar({ lenguage }) {
     en: 'Proyects',
   };
   const Contact = {
-    es: 'Contactos',
-    en: 'Contact',
+    es: 'Contáctame',
+    en: 'Contact me',
   };
 
   useEffect(() => {

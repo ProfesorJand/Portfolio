@@ -78,14 +78,16 @@ export default function Proyects({ lenguage }) {
                       window.open(r.github_url, '_blank');
                     }}
                   ></input>
-                  <input
-                    className={Style.InputGithub}
-                    value="Deploy"
-                    type="button"
-                    onClick={() => {
-                      window.open(r.github_url, '_blank');
-                    }}
-                  ></input>
+                  {r.homepage && (
+                    <input
+                      className={Style.InputGithub}
+                      value="Deploy"
+                      type="button"
+                      onClick={() => {
+                        window.open(r.homepage, '_blank');
+                      }}
+                    ></input>
+                  )}
                 </div>
               </div>
             );
