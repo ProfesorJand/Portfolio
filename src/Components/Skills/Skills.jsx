@@ -120,6 +120,18 @@ export default function Skills({ lenguage }) {
   };
 
   const Skills = {
+    Frontend: {
+      es: 'Frontend',
+      en: 'Frontend',
+    },
+    Backend: {
+      es: 'Backend',
+      en: 'Backend',
+    },
+    Others: {
+      es: 'Otros',
+      en: 'Others',
+    },
     es: 'Habilidades',
     en: 'Skills',
   };
@@ -132,7 +144,7 @@ export default function Skills({ lenguage }) {
         {Object.keys(skills).map((skill) => {
           return (
             <div className={Style.containerH2Skills}>
-              <h2 className={Style.titulo}>{skill}</h2>
+              <h2 className={Style.titulo}>{Skills[skill][lenguage]}</h2>
               <div className={Style.containerSkills}>
                 {skills[skill].map((s) => {
                   return (
