@@ -1,0 +1,38 @@
+[
+  {
+    "name": { "es": "eCommerce (Soy Henry)", "en": "eCommerce (Soy Henry)" },
+    "id": 115708837,
+    "full_name": "PT07G05-Henry",
+    "node_id": "O_kgDOBuWTpQ",
+    "url": "https://api.github.com/orgs/PT07G05-Henry",
+    "github_url": "https://api.github.com/orgs/PT07G05-Henry/repos",
+    "events_url": "https://api.github.com/orgs/PT07G05-Henry/events",
+    "hooks_url": "https://api.github.com/orgs/PT07G05-Henry/hooks",
+    "issues_url": "https://api.github.com/orgs/PT07G05-Henry/issues",
+    "members_url": "https://api.github.com/orgs/PT07G05-Henry/members{/member}",
+    "public_members_url": "https://api.github.com/orgs/PT07G05-Henry/public_members{/member}",
+    "avatar_url": "https://avatars.githubusercontent.com/u/115708837?v=4",
+    "description": {
+      "es": "Esta organización fue creada para desarrollar el proyecto henry de comercio electrónico.",
+      "en": "This organization was created for developing the eCommerce henry project"
+    }
+  },
+  {
+    "name": { "es": "Eagle Solutions App", "en": "Eagle Solutions App" },
+    "id": 129209820,
+    "full_name": "Eagle-Solutions-App",
+    "node_id": "O_kgDOB7OV3A",
+    "url": "https://api.github.com/orgs/Eagle-Solutions-App",
+    "repos_url": "https://api.github.com/orgs/Eagle-Solutions-App/repos",
+    "events_url": "https://api.github.com/orgs/Eagle-Solutions-App/events",
+    "hooks_url": "https://api.github.com/orgs/Eagle-Solutions-App/hooks",
+    "issues_url": "https://api.github.com/orgs/Eagle-Solutions-App/issues",
+    "members_url": "https://api.github.com/orgs/Eagle-Solutions-App/members{/member}",
+    "public_members_url": "https://api.github.com/orgs/Eagle-Solutions-App/public_members{/member}",
+    "avatar_url": "https://avatars.githubusercontent.com/u/129209820?v=4",
+    "description": {
+      "es": "Esta organización fue creada para desarrollar una APP para una empresa constructora",
+      "en": "This organization was created for developing an APP for a constructors company"
+    }
+  }
+]

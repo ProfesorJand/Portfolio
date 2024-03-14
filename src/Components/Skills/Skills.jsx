@@ -1,6 +1,6 @@
 import Style from './skills.module.css';
 
-export default function Skills() {
+export default function Skills({ lenguage }) {
   //https://icons8.com/
   const skills = {
     Frontend: [
@@ -118,10 +118,15 @@ export default function Skills() {
       },
     ],
   };
+
+  const Skills = {
+    es: 'Habilidades',
+    en: 'Skills',
+  };
   return (
     <>
       <div className="tituloH2" id="skills">
-        <h2>Skills</h2>
+        <h2>{Skills[lenguage]}</h2>
       </div>
       <div className={Style.container}>
         {Object.keys(skills).map((skill) => {

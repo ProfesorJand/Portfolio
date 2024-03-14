@@ -1,0 +1,15 @@
+#changeLenguage{
+  display: flex;
+  position: sticky;
+  padding: 5px 10px;
+  background-color: #61dafb;
+  top: 20px;
+  border-radius: 0 25% 25% 0;
+  width: fit-content;
+  font-weight: bold;
+ 
+}
+#changeLenguage:hover{
+  cursor: pointer;
+}
+
