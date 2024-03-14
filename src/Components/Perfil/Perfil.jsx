@@ -2,7 +2,6 @@ import React from 'react';
 import Style from './perfil.module.css';
 import ImgJorge from '../../Images/Foto_cuadrada_Jorge.jpg';
 import SocialMedia from '../SocialMedia/SocialMedia.jsx';
-import Skills from '../Skills/Skills.jsx';
 
 export default function Perfil({ lenguage }) {
   const name = 'Jorge';

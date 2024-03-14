@@ -97,7 +97,7 @@ export default function Proyects({ lenguage }) {
       <div className={Style.containerOrganitation}>
         {orgs &&
           orgs.map((r) => {
-            const imgUrl = `https://raw.githubusercontent.com/${r.full_name}/main/thumbnail.png`;
+            //const imgUrl = `https://raw.githubusercontent.com/${r.full_name}/main/thumbnail.png`;
             return (
               <div
                 className={Style.container + ` mySlides` + ` w3-animate-fading`}

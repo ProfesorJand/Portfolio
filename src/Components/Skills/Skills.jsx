@@ -143,12 +143,12 @@ export default function Skills({ lenguage }) {
       <div className={Style.container}>
         {Object.keys(skills).map((skill) => {
           return (
-            <div className={Style.containerH2Skills}>
+            <div className={Style.containerH2Skills} key={skill}>
               <h2 className={Style.titulo}>{Skills[skill][lenguage]}</h2>
               <div className={Style.containerSkills}>
                 {skills[skill].map((s) => {
                   return (
-                    <div className={Style.skill}>
+                    <div className={Style.skill} key={s.skillName}>
                       <img
                         className={Style.imgSkills}
                         src={s.urlImage}
