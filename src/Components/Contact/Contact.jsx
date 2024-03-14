@@ -7,7 +7,7 @@ const YOUR_SERVICE_ID = process.env.REACT_APP_SERVICE_ID_SENDEMAIL;
 const YOUR_TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID_SENDEMAIL;
 const YOUR_PUBLIC_KEY = process.env.REACT_APP_PUBLIC_KEY_SENDEMAIL;
 
-export default function Contact() {
+export default function Contact({ lenguage }) {
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [emailMessage, setEmailMessage] = useState('');
@@ -73,10 +73,39 @@ export default function Contact() {
     e.target.reset();
   };
 
+  const contact = {
+    es: {
+      tittle: 'Contáctame',
+      user_name: 'Nombre y Apellido',
+      user_email: 'Correo Electronico',
+      user_subject: 'Asunto',
+      user_message: 'Mensaje...',
+      submit: 'Enviar',
+    },
+    en: {
+      tittle: 'Contact me',
+      user_name: 'Full name',
+      user_email: 'Email',
+      user_subject: 'Subject',
+      user_message: 'Mensaje...',
+      submit: 'Submit',
+    },
+  };
+
+  const blockEmail = {
+    es: {
+      emailSended: 'Correo enviado ✔️',
+      seconds: `Por favor esperar ${counterNum} segundos para enviar otro correo`,
+    },
+    en: {
+      emailSended: 'Email sended ✔️',
+      seconds: `Please Wait ${counterNum} seconds to send another Email`,
+    },
+  };
   return (
     <>
       <div className="tituloH2" id="contact">
-        <h2>Contact</h2>
+        <h2>{contact[lenguage]['tittle']}</h2>
       </div>
       <div className={Styles.container}>
         {!protectionEmail ? (
@@ -91,7 +120,7 @@ export default function Contact() {
               name="user_name"
               className={Styles.inputEmail}
               type="text"
-              placeholder="Full Name"
+              placeholder={contact[lenguage]['user_name']}
               value={fullName}
               onChange={(e) => {
                 setFullName(e.target.value);
@@ -103,7 +132,7 @@ export default function Contact() {
               name="user_email"
               className={Styles.inputEmail}
               type="email"
-              placeholder="Email"
+              placeholder={contact[lenguage]['user_email']}
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
@@ -115,7 +144,7 @@ export default function Contact() {
               name="user_subject"
               className={Styles.inputSubject}
               type="text"
-              placeholder="Subject"
+              placeholder={contact[lenguage]['user_subject']}
               value={subject}
               onChange={(e) => {
                 setSubject(e.target.value);
@@ -132,7 +161,7 @@ export default function Contact() {
                 onChange={(e) => {
                   setEmailMessage(e.target.value);
                 }}
-                placeholder="Message..."
+                placeholder={contact[lenguage]['user_message']}
                 required
               />
             </div>
@@ -140,7 +169,7 @@ export default function Contact() {
             <input
               className={Styles.submit}
               type="submit"
-              value="Submit"
+              value={contact[lenguage]['submit']}
             ></input>
           </form>
         ) : success ? (
