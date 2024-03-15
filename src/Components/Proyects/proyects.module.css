@@ -18,7 +18,7 @@
   display: flex;
   flex-direction: row;
   /* flex-wrap: wrap; */
-  justify-content: center;
+  justify-content: left;
   width: 80%;
   margin: 10px auto;
   padding: 20px 20px;
@@ -127,6 +127,7 @@
     width: 50vw;
   }
   .containerOrganitation{
+    justify-content: left;
     width: 50vw;
     justify-content: space-evenly;
   }
