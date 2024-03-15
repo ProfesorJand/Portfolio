@@ -1,4 +1,4 @@
-.sidenav {
+/* .sidenav {
   height: 100%;
   width: max-content;
   position: fixed;
@@ -29,4 +29,51 @@
   .sidenav a {
     font-size: 1rem;
   }
+} */
+.mobileContainer {
+  max-width: 100%;
+  margin: auto;
+  background-color: #555;
+
+  color: white;
+  border-radius: 10px;
 }
+
+.topnav {
+  overflow: hidden;
+  background-color: #282c34;
+  position: relative;
+  display: flex;
+    flex-direction: row;
+}
+
+.topnav #myLinks {
+  display: none;
+}
+
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.topnav a:hover {
+  background-color: #1e252f;
+  color: #61dafb;
+}
+
+.active {
+  background-color: #04AA6D;
+  color: white;
+}
+

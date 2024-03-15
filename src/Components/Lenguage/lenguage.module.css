@@ -1,12 +1,13 @@
 #changeLenguage{
   display: flex;
-  position: sticky;
+  position: fixed;
   padding: 5px 10px;
   background-color: #61dafb;
-  top: 20px;
+  top: 50px;
   border-radius: 0 25% 25% 0;
   width: fit-content;
   font-weight: bold;
+  z-index: 3;
  
 }
 #changeLenguage:hover{
