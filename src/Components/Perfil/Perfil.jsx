@@ -75,9 +75,9 @@ export default function Perfil({ lenguage }) {
             <span className={Style.spanText}>
               {textAboutMe[lenguage]['ingDegree']}
             </span>
-            . {textAboutMe[lenguage]['text2']}
+            . {textAboutMe[lenguage]['text2']}{' '}
             <span className={Style.spanText}>
-              {textAboutMe[lenguage]['Nodejs']}
+              {textAboutMe[lenguage]['NodeJS']}
             </span>
             ,{' '}
             <span className={Style.spanText}>
