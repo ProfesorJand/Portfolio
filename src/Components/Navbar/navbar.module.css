@@ -45,6 +45,8 @@
   position: relative;
   display: flex;
     flex-direction: row;
+    white-space: nowrap;
+    overflow-x: scroll;
 }
 
 .topnav #myLinks {
@@ -55,7 +57,7 @@
   color: white;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 2em;
   display: block;
 }
 

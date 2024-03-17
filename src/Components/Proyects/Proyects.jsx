@@ -93,7 +93,7 @@ export default function Proyects({ lenguage }) {
             );
           })}
       </div>
-      <div className="tituloH2" id="proyects">
+      <div className="tituloH2" id="organizations">
         <h2>{githubOrganization[lenguage]}</h2>
       </div>
       <div className={Style.containerOrganitation}>

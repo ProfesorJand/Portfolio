@@ -17,6 +17,10 @@ export default function Navbar({ lenguage }) {
     es: 'Proyectos',
     en: 'Proyects',
   };
+  const Organizations = {
+    es: 'Organizaciones',
+    en: 'Organizations',
+  };
   const Contact = {
     es: 'Contáctame',
     en: 'Contact me',
@@ -71,6 +75,7 @@ export default function Navbar({ lenguage }) {
         <a href="#aboutMe">{About[lenguage]}</a>
         <a href="#skills">{Skills[lenguage]}</a>
         <a href="#proyects">{Proyects[lenguage]}</a>
+        <a href="#organizations">{Organizations[lenguage]}</a>
         <a href="#contact">{Contact[lenguage]}</a>
       </div>
     </div>

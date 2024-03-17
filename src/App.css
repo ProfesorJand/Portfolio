@@ -20,6 +20,27 @@ p{
   animation: tituloGlowing 2s infinite;
 }
 
+#aboutMe{
+    scroll-margin-top: 20px;
+}
+
+#skills{
+  scroll-margin-top: 20px;
+}
+
+#proyects{
+  scroll-margin-top: 20px;
+}
+
+#organizations{
+  scroll-margin-top: 20px;
+}
+
+#contact{
+  scroll-margin-top: 20px;
+}
+
+
 @keyframes tituloGlowing {
   0%{text-shadow: 0 0 1px aqua;}
   50%{text-shadow: 0 0 1px white;}
@@ -66,6 +87,8 @@ p{
   min-width: 100px;
   z-index: 2;
   background-color: #282c34;
+  height: fit-content;
+  font-size: x-small;
 }
 
 
