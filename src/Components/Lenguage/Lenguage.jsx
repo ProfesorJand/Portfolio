@@ -12,7 +12,7 @@ export default function Lenguage({ lenguage, setLenguage }) {
   return (
     <>
       <div id={Style['changeLenguage']} onClick={() => ToggleEvent()}>
-        {lenguage.toUpperCase()}
+        🌐{lenguage.toUpperCase()}
       </div>
     </>
   );
