@@ -60,7 +60,7 @@ export default function Perfil({ lenguage }) {
   };
 
   return (
-    <>
+    <section id="aboutMe">
       <div className="tituloH2" id="aboutMe">
         <h2>{textAboutMe[lenguage]['aboutMe']}</h2>
       </div>
@@ -156,6 +156,6 @@ export default function Perfil({ lenguage }) {
           />
         </div>
       </div>
-    </>
+    </section>
   );
 }

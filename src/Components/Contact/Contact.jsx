@@ -103,7 +103,7 @@ export default function Contact({ lenguage }) {
     },
   };
   return (
-    <>
+    <section id="contact">
       <div className="tituloH2" id="contact">
         <h2>{contact[lenguage]['tittle']}</h2>
       </div>
@@ -184,6 +184,6 @@ export default function Contact({ lenguage }) {
           </div>
         )}
       </div>
-    </>
+    </section>
   );
 }

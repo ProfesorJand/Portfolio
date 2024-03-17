@@ -23,41 +23,44 @@ export default function Proyects({ lenguage }) {
 
   return (
     <>
-      <div className="tituloH2" id="proyects">
-        <h2>{githubProyects[lenguage]}</h2>
-      </div>
-      <div className={Style.containerProyects}>
-        {/* <Carousel> */}
-        {repo &&
-          repo.map((r) => {
-            const imgUrl = `https://raw.githubusercontent.com/${r.full_name}/main/thumbnail.png`;
-            return (
-              <div
-                className={Style.container + ` mySlides` + ` w3-animate-fading`}
-                key={r.id}
-              >
-                <h2>{r.name[lenguage]}</h2>
-                <img
-                  className={`${Style.img_thumbnail}`}
-                  src={`https://raw.githubusercontent.com/${r.full_name}/main/thumbnail.png`}
-                  onError={({ currentTarget }) => {
-                    currentTarget.onerror = null; // prevents looping
-                    currentTarget.src = imgNoAvailable;
-                  }}
-                  alt={'Repo thumbnail ' + r.full_name}
-                />
-                <p>{r.description[lenguage]}</p>
-                <div className={Style.Info_Actions_Github}>
-                  <div>
-                    <FaStar></FaStar> {r.stargazers_count}
-                  </div>
-                  <div>
-                    <FaEye></FaEye> {r.watchers_count}
-                  </div>
-                  <div>
-                    <BiGitRepoForked></BiGitRepoForked> {r.forks_count}
-                  </div>
-                  {/* <div>
+      <section id="proyects">
+        <div className="tituloH2">
+          <h2>{githubProyects[lenguage]}</h2>
+        </div>
+        <div className={Style.containerProyects}>
+          {/* <Carousel> */}
+          {repo &&
+            repo.map((r) => {
+              const imgUrl = `https://raw.githubusercontent.com/${r.full_name}/main/thumbnail.png`;
+              return (
+                <div
+                  className={
+                    Style.container + ` mySlides` + ` w3-animate-fading`
+                  }
+                  key={r.id}
+                >
+                  <h2>{r.name[lenguage]}</h2>
+                  <img
+                    className={`${Style.img_thumbnail}`}
+                    src={`https://raw.githubusercontent.com/${r.full_name}/main/thumbnail.png`}
+                    onError={({ currentTarget }) => {
+                      currentTarget.onerror = null; // prevents looping
+                      currentTarget.src = imgNoAvailable;
+                    }}
+                    alt={'Repo thumbnail ' + r.full_name}
+                  />
+                  <p>{r.description[lenguage]}</p>
+                  <div className={Style.Info_Actions_Github}>
+                    <div>
+                      <FaStar></FaStar> {r.stargazers_count}
+                    </div>
+                    <div>
+                      <FaEye></FaEye> {r.watchers_count}
+                    </div>
+                    <div>
+                      <BiGitRepoForked></BiGitRepoForked> {r.forks_count}
+                    </div>
+                    {/* <div>
                     <FaClone
                       onClick={() => {
                         const fork = document.getElementById(`${r.name}`);
@@ -68,79 +71,83 @@ export default function Proyects({ lenguage }) {
                     ></FaClone>
                 <input type="text" value={r.clone_url} id={r.name} ></input>
                   </div> */}
-                </div>
-                <div className={Style.containersCTA}>
-                  <input
-                    className={Style.InputGithub}
-                    value="Repository"
-                    type="button"
-                    onClick={() => {
-                      window.open(r.github_url, '_blank');
-                    }}
-                  ></input>
-                  {r.homepage && (
+                  </div>
+                  <div className={Style.containersCTA}>
                     <input
                       className={Style.InputGithub}
-                      value="Deploy"
+                      value="Repository"
                       type="button"
                       onClick={() => {
-                        window.open(r.homepage, '_blank');
+                        window.open(r.github_url, '_blank');
                       }}
                     ></input>
-                  )}
+                    {r.homepage && (
+                      <input
+                        className={Style.InputGithub}
+                        value="Deploy"
+                        type="button"
+                        onClick={() => {
+                          window.open(r.homepage, '_blank');
+                        }}
+                      ></input>
+                    )}
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-      </div>
-      <div className="tituloH2" id="organizations">
-        <h2>{githubOrganization[lenguage]}</h2>
-      </div>
-      <div className={Style.containerOrganitation}>
-        {orgs &&
-          orgs.map((r) => {
-            //const imgUrl = `https://raw.githubusercontent.com/${r.full_name}/main/thumbnail.png`;
-            return (
-              <div
-                className={Style.container + ` mySlides` + ` w3-animate-fading`}
-                key={r.id}
-                // onClick={() => {
-                //   window.open(r.html_url, "_blank");
-                // }}
-              >
-                <h2>{r.name[lenguage]}</h2>
-                <img
-                  className={`${Style.img_thumbnail}`}
-                  src={r.avatar_url}
-                  onError={({ currentTarget }) => {
-                    currentTarget.onerror = null; // prevents looping
-                    currentTarget.src = imgNoAvailable;
-                  }}
-                  alt={'Repo thumbnail ' + r.full_name}
-                />
-                <p>{r.description[lenguage]}</p>
-                <div className={Style.Info_Actions_Github}>
-                  <div>
-                    <FaStar></FaStar> {r.stargazers_count}
+              );
+            })}
+        </div>
+      </section>
+      <section id="organizations">
+        <div className="tituloH2">
+          <h2>{githubOrganization[lenguage]}</h2>
+        </div>
+        <div className={Style.containerOrganitation}>
+          {orgs &&
+            orgs.map((r) => {
+              //const imgUrl = `https://raw.githubusercontent.com/${r.full_name}/main/thumbnail.png`;
+              return (
+                <div
+                  className={
+                    Style.container + ` mySlides` + ` w3-animate-fading`
+                  }
+                  key={r.id}
+                  // onClick={() => {
+                  //   window.open(r.html_url, "_blank");
+                  // }}
+                >
+                  <h2>{r.name[lenguage]}</h2>
+                  <img
+                    className={`${Style.img_thumbnail}`}
+                    src={r.avatar_url}
+                    onError={({ currentTarget }) => {
+                      currentTarget.onerror = null; // prevents looping
+                      currentTarget.src = imgNoAvailable;
+                    }}
+                    alt={'Repo thumbnail ' + r.full_name}
+                  />
+                  <p>{r.description[lenguage]}</p>
+                  <div className={Style.Info_Actions_Github}>
+                    <div>
+                      <FaStar></FaStar> {r.stargazers_count}
+                    </div>
+                    <div>
+                      <FaEye></FaEye> {r.watchers_count}
+                    </div>
+                    <div>
+                      <BiGitRepoForked></BiGitRepoForked> {r.forks_count}
+                    </div>
+                    {}
                   </div>
-                  <div>
-                    <FaEye></FaEye> {r.watchers_count}
-                  </div>
-                  <div>
-                    <BiGitRepoForked></BiGitRepoForked> {r.forks_count}
-                  </div>
-                  {}
-                </div>
 
-                <input
-                  className={Style.InputGithub}
-                  value="Go Repository"
-                  type="button"
-                  onClick={() => {
-                    window.open(r.html_url, '_blank');
-                  }}
-                ></input>
-                {/* <div className={Style.Members}>
+                  <input
+                    className={Style.InputGithub}
+                    value="Go Repository"
+                    type="button"
+                    onClick={() => {
+                      window.open(r.html_url, '_blank');
+                    }}
+                  ></input>
+                  {/* <div className={Style.Members}>
                   {members &&
                     members[r.name] &&
                     members[r.name].map((m) => {
@@ -155,10 +162,11 @@ export default function Proyects({ lenguage }) {
                       );
                     })}
                 </div> */}
-              </div>
-            );
-          })}
-      </div>
+                </div>
+              );
+            })}
+        </div>
+      </section>
     </>
   );
 }

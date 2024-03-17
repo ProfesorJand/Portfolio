@@ -10,6 +10,9 @@ p{
 
 .tituloH2{
   margin: 20px auto 5px auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 .tituloH2 h2{

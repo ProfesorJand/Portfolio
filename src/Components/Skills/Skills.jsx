@@ -136,8 +136,8 @@ export default function Skills({ lenguage }) {
     en: 'Skills',
   };
   return (
-    <>
-      <div className="tituloH2" id="skills">
+    <section id="skills">
+      <div className="tituloH2">
         <h2>{Skills[lenguage]}</h2>
       </div>
       <div className={Style.container}>
@@ -163,6 +163,6 @@ export default function Skills({ lenguage }) {
           );
         })}
       </div>
-    </>
+    </section>
   );
 }

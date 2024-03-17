@@ -30,6 +30,11 @@
     font-size: 1rem;
   }
 } */
+
+.active{
+  background-color: #04AA6D;
+}
+
 .mobileContainer {
   max-width: 100%;
   margin: auto;

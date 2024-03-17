@@ -69,14 +69,43 @@ export default function Navbar({ lenguage }) {
 
   //window.addEventListener('scroll', test);
 
+  const sections = document.querySelectorAll('section');
+  const navLi = document.querySelectorAll(`div .${Styles.topnav} a`);
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (window.scrollY >= sectionTop - 20) {
+        current = section.getAttribute('id');
+      }
+    });
+    navLi.forEach((a) => {
+      a.classList.remove(Styles.active);
+      if (a.classList.contains(current)) {
+        a.classList.add(Styles.active);
+      }
+    });
+  });
   return (
     <div className={Styles.mobileContainer}>
       <div className={Styles.topnav}>
-        <a href="#aboutMe">{About[lenguage]}</a>
-        <a href="#skills">{Skills[lenguage]}</a>
-        <a href="#proyects">{Proyects[lenguage]}</a>
-        <a href="#organizations">{Organizations[lenguage]}</a>
-        <a href="#contact">{Contact[lenguage]}</a>
+        <a className={`${Styles.active} aboutMe `} href="#aboutMe">
+          {About[lenguage]}
+        </a>
+        <a className="skills" href="#skills">
+          {Skills[lenguage]}
+        </a>
+        <a className="proyects" href="#proyects">
+          {Proyects[lenguage]}
+        </a>
+        <a className="organizations" href="#organizations">
+          {Organizations[lenguage]}
+        </a>
+        <a className="contact" href="#contact">
+          {Contact[lenguage]}
+        </a>
       </div>
     </div>
   );
