@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Style from './lenguage.module.css';
 
 export default function Lenguage({ lenguage, setLenguage }) {

@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React from 'react';
 import { useEffect, useState, useRef } from 'react';
 import Styles from './contact.module.css';

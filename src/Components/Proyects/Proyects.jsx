@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Style from './proyects.module.css';
-import axios from 'axios';
-import { FaEye, FaStar, FaClone } from 'react-icons/fa';
+import { FaEye, FaStar } from 'react-icons/fa';
 import { BiGitRepoForked } from 'react-icons/bi';
 import imgNoAvailable from '../../Images/no-image-available.jpg';
 import repo from '../../json/repositories.json';
 import orgs from '../../json/organitations.json';
-import { IconContext } from 'react-icons';
-//
-// import "react-responsive-carousel/lib/styles/carousel.min.css";
-// import {Carousel} from "react-responsive-carousel";
 
 export default function Proyects({ lenguage }) {
   const githubProyects = {
@@ -28,15 +23,11 @@ export default function Proyects({ lenguage }) {
           <h2>{githubProyects[lenguage]}</h2>
         </div>
         <div className={Style.containerProyects}>
-          {/* <Carousel> */}
           {repo &&
             repo.map((r) => {
-              const imgUrl = `https://raw.githubusercontent.com/${r.full_name}/main/thumbnail.png`;
               return (
                 <div
-                  className={
-                    Style.container + ` mySlides` + ` w3-animate-fading`
-                  }
+                  className={`${Style.container} mySlides w3-animate-fading`}
                   key={r.id}
                 >
                   <h2>{r.name[lenguage]}</h2>
@@ -60,17 +51,6 @@ export default function Proyects({ lenguage }) {
                     <div>
                       <BiGitRepoForked></BiGitRepoForked> {r.forks_count}
                     </div>
-                    {/* <div>
-                    <FaClone
-                      onClick={() => {
-                        const fork = document.getElementById(`${r.name}`);
-                        fork.select();
-                        document.execCommand("copy");
-                        console.log("copiado")
-                      }}
-                    ></FaClone>
-                <input type="text" value={r.clone_url} id={r.name} ></input>
-                  </div> */}
                   </div>
                   <div className={Style.containersCTA}>
                     <input
@@ -104,16 +84,10 @@ export default function Proyects({ lenguage }) {
         <div className={Style.containerOrganitation}>
           {orgs &&
             orgs.map((r) => {
-              //const imgUrl = `https://raw.githubusercontent.com/${r.full_name}/main/thumbnail.png`;
               return (
                 <div
-                  className={
-                    Style.container + ` mySlides` + ` w3-animate-fading`
-                  }
+                  className={`${Style.container} mySlides w3-animate-fading`}
                   key={r.id}
-                  // onClick={() => {
-                  //   window.open(r.html_url, "_blank");
-                  // }}
                 >
                   <h2>{r.name[lenguage]}</h2>
                   <img
@@ -147,21 +121,6 @@ export default function Proyects({ lenguage }) {
                       window.open(r.html_url, '_blank');
                     }}
                   ></input>
-                  {/* <div className={Style.Members}>
-                  {members &&
-                    members[r.name] &&
-                    members[r.name].map((m) => {
-                      return (
-                        <a href={m.html_url} target="_blank">
-                          <img
-                            className={Style.img_member}
-                            src={m.avatar_url}
-                            alt={`member ${m.login}`}
-                          />
-                        </a>
-                      );
-                    })}
-                </div> */}
                 </div>
               );
             })}
@@ -170,16 +129,3 @@ export default function Proyects({ lenguage }) {
     </>
   );
 }
-
-//fork
-/* <div>
-                    <FaClone
-                      onClick={() => {
-                        const fork = document.getElementById(`${r.name}`);
-                        fork.select();
-                        document.execCommand("copy");
-                        console.log("copiado")
-                      }}
-                    ></FaClone>
-                <input type="text" value={r.clone_url} id={r.name} ></input>
-                  </div> */
